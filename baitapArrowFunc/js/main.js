@@ -18,11 +18,13 @@ const arrayButton = document.getElementsByTagName('button');
 
 let doiMau = (array, selector)=>{
     let newClassName = '';
+    let ele = document.querySelector(selector);
     for (let index in array){
         array[index].onclick = function(){
             // console.log(array[index].classList[1]);
             newClassName = array[index].classList[1];
-            document.querySelector(selector).classList.add(newClassName);
+            ele.classList.remove(ele.classList[1]);
+            ele.classList.add(newClassName);
         }
 
     }
